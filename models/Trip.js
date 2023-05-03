@@ -1,9 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Trip extends Model {}
 
 Trip.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
         tripBudget: {
             type: DataTypes.DECIMAL,
             allowNull: false
